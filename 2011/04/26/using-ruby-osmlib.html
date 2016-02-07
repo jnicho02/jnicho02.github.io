@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Using Ruby OSMlib</title>
+    <!-- Bootstrap 4 alpha CSS -->
+    <!-- IMPORTANT: Don't use this .css file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2011 x2011_04 x2011_04_26 x2011_04_26_using-ruby-osmlib">
+
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <!-- Links -->
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class="container">
+      <p>Just doing a bit of noodling with <a href="http://openstreetmap.org">http://openstreetmap.org</a> data to follow up my investigations during the LinkedGov Hack Day. I was working on an OSM ThingMatcher to find you an existing node at a particular postal address. The idea is that uniquely tagged objects such as doctors surgeries, postboxes, etc. will be more accurately positioned in OSM than the geolocation you'll get by geocoding the postcode. I wrote some code to pull in and parse OSM xml, but after a hunt I have found the ruby <a href="http://osmlib.rubyforge.org/">OSMLib</a>. Amongst other things, it gives you quick access to the OSM API.  There are examples at <a href="https://github.com/jekhor/osmlib-base/blob/master/examples/get_bbox">https://github.com/jekhor/osmlib-base/blob/master/examples/get_bbox</a></p>
+
+<pre><code>gem install osmlib-base
+
+irb
+
+require 'OSM/API'
+@api = OSM::API.new
+location = 50.83362, -0.1387
+db = @api.get_bbox(location[1] - 0.01, location[0] - 0.01, location[1] + 0.01, location[0] + 0.01)
+post_boxes = db.nodes.values.select {|node|node.tags.detect{|tag|tag[1]=="post_box"} }
+</code></pre>
+
+<p>gives an Array of post_boxes within a bounding box.</p>
+
+    </div>
+
+    <div>
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
