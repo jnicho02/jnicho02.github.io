@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+
+    using CSS on html in a JTextPane</title>
+    <!-- Bootstrap 4 alpha CSS -->
+    <!-- IMPORTANT: Don't use this .css file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2006 x2006_05 x2006_05_05 x2006_05_05_using-css-in-a-jtextpane x2006_05_05_using-css-in-a-jtextpane_index">
+
+
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <!-- Links -->
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>using CSS on html in a JTextPane</h1>
+      <p>Creating an HTML editor with standard jdk1.4/1.5 Swing is fairly simple, but remains slightly buggy and HTML 3.2-based. One nice touch is that a JTextPane can handle CSS.</p>
+
+<p>I do this in two ways. Firstly, to apply CSS directly to a panel:</p>
+
+<p>'''java</p>
+
+<pre><code>package core.view.editor;
+
+import javax.swing.JTextPane;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+
+public class Foo extends JTextPane {
+  public Foo() {
+    super();
+    HTMLEditorKit kit = new HTMLEditorKit();
+    setEditorKit(kit);
+    StyleSheet styleSheet = kit.getStyleSheet();
+    styleSheet
+        .addRule("body {margin-left:22px; margin-top:22px; margin-right:22px;}");
+    styleSheet
+        .addRule("body {color:#000000; font-family:Verdana,sans-serif;}");
+    Document doc = kit.createDefaultDocument();
+    setDocument(doc);
+  }
+} and secondly to create Actions and hence buttons or drop-downs to control the display
+</code></pre>
+
+<p>'''java</p>
+
+<pre><code>package core.view.editor;
+
+import java.awt.event.ActionEvent;
+import javax.swing.JEditorPane;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+import javax.swing.text.html.HTMLEditorKit.HTMLTextAction;
+
+/**
+ + apply a number of css rules to the stylesheet
+ */
+public class CssAction extends HTMLTextAction
+{
+  public CssAction(String name, String[] rules)
+  {
+    super(name);
+    this.rules = rules;
+  }
+
+  public CssAction(String name, String rule)
+  {
+    super(name);
+    rules = new String[1];
+    rules[0] = rule;
+  }
+
+  public void actionPerformed(ActionEvent ae)
+  {
+    JEditorPane editor = getEditor(ae);
+    if (editor != null)
+    {
+      HTMLEditorKit kit = getHTMLEditorKit(editor);
+      StyleSheet styleSheet = kit.getStyleSheet();
+      for (int i = 0; i &lt; rules.length; i++)
+      {
+        styleSheet.addRule(rules[i]);
+        // no need to remove existing rule
+      }
+      int pos = editor.getCaretPosition();
+      String data = editor.getText();
+      editor.setText("");
+      editor.setText(data);
+      editor.setCaretPosition(pos);
+    }
+  }
+
+  // set of css rules, e.g. "body {margin-left:22px;}"
+  private String[] rules;
+} ''' Then I extend HTMLEditorKit to add my Actions to the standard set. '''java
+
+package core.view.editor;
+
+import javax.swing.Action;
+import javax.swing.text.TextAction;
+import javax.swing.text.html.HTMLEditorKit;
+
+public class MyHTMLEditorKit extends HTMLEditorKit
+{
+  private static final Action[] customDefaultActions =
+  {
+    new CssAction("Small", "body {font-size: 10pt;}"),
+    new CssAction("Medium", "body {font-size: 14pt;}"),
+    new CssAction("Large", "body {font-size: 18pt;}")
+  };
+    
+  public Action[] getActions()
+  {
+    return TextAction.augmentList(super.getActions(), customDefaultActions);
+  }
+} ''' '''java
+
+package core.view.editor;
+
+import javax.swing.JTextPane;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+
+public class Foo extends JTextPane
+{
+  public Foo()
+  {
+    super();
+    HTMLEditorKit kit = new MyHTMLEditorKit();
+    setEditorKit(kit);
+    Document doc = kit.createDefaultDocument();
+    setDocument(doc);
+  }
+} ''' Leaving you only to retrieve the Actions from getActions() by name (getValue("Name")) and creating a JButton or JMenuItem or use my previously mentioned JActionComboBox
+</code></pre>
+
+<p>** Update 7th Oct 2010**
+So, this appears to be my most popular blog post and is still visited 4 years after I wrote it. I hope that it is still relevant.</p>
+
+<p>Anyway, I was just looking at The Flying Saucer Project, an open source XML/XHTML/CSS 2.1 Renderer in Java. If you've read down this far then it may be another thing to consider.</p>
+
+    </div>
+
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- Bootstrap 4 Alpha JS -->
+<!-- IMPORTANT: Don't use this .js file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+  </body>
+</html>

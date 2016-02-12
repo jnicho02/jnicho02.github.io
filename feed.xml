@@ -11,8 +11,8 @@
   </author>
   <entry>
     <title>read "The Medium is the Massage" by Marshall McLuhan</title>
-    <link rel="alternate" href="http://blog.url.com/2015/08/05/read-the-medium-is-the-massage.html"/>
-    <id>http://blog.url.com/2015/08/05/read-the-medium-is-the-massage.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/08/05/read-the-medium-is-the-massage/"/>
+    <id>http://blog.url.com/2015/08/05/read-the-medium-is-the-massage/</id>
     <published>2015-08-05T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
@@ -23,8 +23,8 @@
   </entry>
   <entry>
     <title>attended Brighton Ruby Conference 2015</title>
-    <link rel="alternate" href="http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015.html"/>
-    <id>http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/"/>
+    <id>http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/</id>
     <published>2015-07-20T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
@@ -35,8 +35,8 @@
   </entry>
   <entry>
     <title>read "The Art of the Start 2.0" by Guy Kawasaki</title>
-    <link rel="alternate" href="http://blog.url.com/2015/07/20/read-the-art-of-the-start.html"/>
-    <id>http://blog.url.com/2015/07/20/read-the-art-of-the-start.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/07/20/read-the-art-of-the-start/"/>
+    <id>http://blog.url.com/2015/07/20/read-the-art-of-the-start/</id>
     <published>2015-07-20T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
@@ -47,8 +47,8 @@
   </entry>
   <entry>
     <title>attended</title>
-    <link rel="alternate" href="http://blog.url.com/2015/07/15/attended-geomob.html"/>
-    <id>http://blog.url.com/2015/07/15/attended-geomob.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/07/15/attended-geomob/"/>
+    <id>http://blog.url.com/2015/07/15/attended-geomob/</id>
     <published>2015-07-15T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
@@ -59,8 +59,8 @@
   </entry>
   <entry>
     <title>attended Blockchain Hack Day</title>
-    <link rel="alternate" href="http://blog.url.com/2015/06/26/athereum-hack-day.html"/>
-    <id>http://blog.url.com/2015/06/26/athereum-hack-day.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/06/26/athereum-hack-day/"/>
+    <id>http://blog.url.com/2015/06/26/athereum-hack-day/</id>
     <published>2015-06-26T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
@@ -235,8 +235,8 @@ var instance = eth.contract(abi).at(address)&lt;/p&gt;
   </entry>
   <entry>
     <title>attended Brighton Ruby Group Meetup</title>
-    <link rel="alternate" href="http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup.html"/>
-    <id>http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup.html</id>
+    <link rel="alternate" href="http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/"/>
+    <id>http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/</id>
     <published>2015-06-04T01:00:00+01:00</published>
     <updated>2016-02-11T08:13:24+00:00</updated>
     <author>
