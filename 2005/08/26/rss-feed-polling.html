@@ -7,7 +7,9 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>RSS feed polling frequency and 304 Not modified</title>
+    <title>
+
+    RSS feed polling frequency and 304 Not modified</title>
     <!-- Bootstrap 4 alpha CSS -->
     <!-- IMPORTANT: Don't use this .css file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
@@ -17,6 +19,7 @@
   </head>
 
   <body class="x2005 x2005_08 x2005_08_26 x2005_08_26_rss-feed-polling">
+
 
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <!-- Brand -->
@@ -41,8 +44,8 @@
     <br/>
     <br/>
     <br/>
-
-    <div class="container">
+    <div class="container-fluid">
+      <h1>RSS feed polling frequency and 304 Not modified</h1>
       <p>I've just been doing some research into my plans on integrating news and information into a Swing client application via RSS (and/or Atom). It seems to me that rather than expecting our users to continually check the web site for news items we can just poll a feed from within the app. The main impetus was the ability to send system messages as the client does not maintain state on the server.</p>
 
 <p>There is talk about RSS readers bandwidth hogging. Common consensus is that a poll frequency of 1 hour is the most frequent that should be used, but if I want to publish service announcements I would want it to appear fairly quickly so would poll this feed more often, which would be okay as after all it would be our users polling our web server, but I don't want to overload it unneccessarily. A comment mentioned the http 304 Not modified response and reminded me that web browsers cache pages.</p>
@@ -51,7 +54,7 @@
 
     </div>
 
-    <div>
+    <div class="container">
   <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
 </div>
 <script type="text/javascript">
@@ -62,6 +65,9 @@
   ga('create', 'UA-5854204-2', 'auto');
   ga('send', 'pageview');
 </script>
+<!-- Bootstrap 4 Alpha JS -->
+<!-- IMPORTANT: Don't use this .js file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
 
   </body>
 </html>

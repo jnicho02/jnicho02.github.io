@@ -7,7 +7,9 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>converting MySql data to sqlite3</title>
+    <title>
+
+    converting MySql data to sqlite3</title>
     <!-- Bootstrap 4 alpha CSS -->
     <!-- IMPORTANT: Don't use this .css file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
@@ -17,6 +19,7 @@
   </head>
 
   <body class="x2010 x2010_12 x2010_12_11 x2010_12_11_converting-mysql-to-sqlite">
+
 
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <!-- Brand -->
@@ -41,8 +44,8 @@
     <br/>
     <br/>
     <br/>
-
-    <div class="container">
+    <div class="container-fluid">
+      <h1>converting MySql data to sqlite3</h1>
       <p>I was just trying to switch a Rails app over to mysql and had a bad time with the mysql gem. In the end I decided to get the data into sqlite3 instead. It wasn't too hard. I loaded the sql dump that I had been given into mysql then dumped it out again in a sqlite-friendly format with:</p>
 
 <pre><code>mysqldump openplaques -u root -p --skip-add-drop-table --skip-extended-insert --no-create-info --skip-add-locks &gt; sqlite3_friendly.sql
@@ -57,7 +60,7 @@
 
     </div>
 
-    <div>
+    <div class="container">
   <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
 </div>
 <script type="text/javascript">
@@ -68,6 +71,9 @@
   ga('create', 'UA-5854204-2', 'auto');
   ga('send', 'pageview');
 </script>
+<!-- Bootstrap 4 Alpha JS -->
+<!-- IMPORTANT: Don't use this .js file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
 
   </body>
 </html>

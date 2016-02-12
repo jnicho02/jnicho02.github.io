@@ -7,7 +7,9 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>Quick n easy viewing of Swing JPanels</title>
+    <title>
+
+    Quick n easy viewing of Swing JPanels</title>
     <!-- Bootstrap 4 alpha CSS -->
     <!-- IMPORTANT: Don't use this .css file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
@@ -17,6 +19,7 @@
   </head>
 
   <body class="x2005 x2005_08 x2005_08_17 x2005_08_17_quick-n-easy-viewing-of-swing-jpanels">
+
 
         <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <!-- Brand -->
@@ -41,8 +44,8 @@
     <br/>
     <br/>
     <br/>
-
-    <div class="container">
+    <div class="container-fluid">
+      <h1>Quick n easy viewing of Swing JPanels</h1>
       <p>Now, if you're like me, you still like to code Swing panels by hand. Personally I believe that you can keep the code much tighter than a gui design program and also I don't like getting tied in to a product. When i'm coding Swing panels I generally make them bean-like, giving them a single null constructor. When you are making small cosmetic changes it's very tempting to add a main() to each panel so that you can run it standalone, i.e. you don't want to fire up the whole system. But, that is introducing code that the class is not responsible for, and test code starts to creep in to your nice neat classes. My quick n' easy answer was to write a little program that hunts a given source code directory for classes that extend JComponent and have a null constructor, then make them launchable standalone in a frame.</p>
 
 <pre><code>import java.awt.BorderLayout;
@@ -193,7 +196,7 @@ public class PanelDisplayer
 
     </div>
 
-    <div>
+    <div class="container">
   <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
 </div>
 <script type="text/javascript">
@@ -204,6 +207,9 @@ public class PanelDisplayer
   ga('create', 'UA-5854204-2', 'auto');
   ga('send', 'pageview');
 </script>
+<!-- Bootstrap 4 Alpha JS -->
+<!-- IMPORTANT: Don't use this .js file in production. Use Bootstrap 3 until Bootstrap 4.0.0 is released. -->
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
 
   </body>
 </html>
