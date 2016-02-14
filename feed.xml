@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/08/05/read-the-medium-is-the-massage/"/>
     <id>http://blog.url.com/2015/08/05/read-the-medium-is-the-massage/</id>
     <published>2015-08-05T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:11:41+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -26,7 +26,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/"/>
     <id>http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/</id>
     <published>2015-07-20T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:11:11+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -38,7 +38,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/07/20/read-the-art-of-the-start/"/>
     <id>http://blog.url.com/2015/07/20/read-the-art-of-the-start/</id>
     <published>2015-07-20T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:11:30+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -46,11 +46,11 @@
 </content>
   </entry>
   <entry>
-    <title>attended</title>
+    <title>attended geomob July 2015</title>
     <link rel="alternate" href="http://blog.url.com/2015/07/15/attended-geomob/"/>
     <id>http://blog.url.com/2015/07/15/attended-geomob/</id>
     <published>2015-07-15T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:11:17+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -62,7 +62,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/06/26/athereum-hack-day/"/>
     <id>http://blog.url.com/2015/06/26/athereum-hack-day/</id>
     <published>2015-06-26T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:06:30+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -238,7 +238,7 @@ var instance = eth.contract(abi).at(address)&lt;/p&gt;
     <link rel="alternate" href="http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/"/>
     <id>http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/</id>
     <published>2015-06-04T01:00:00+01:00</published>
-    <updated>2016-02-11T08:13:24+00:00</updated>
+    <updated>2016-02-14T13:06:36+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
