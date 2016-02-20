@@ -37,7 +37,7 @@
     <br/>
     <div class="container-fluid">
       <h1>OpenStreetMap station data</h1>
-      <p>Here is some quick postgis sql that I used to knock up kml of railway station sites in England. I have now forked traingraph to add my own flourishes https://github.com/jnicho02/traingraph</p>
+      <p>Here is some quick postgis sql that I used to knock up kml of railway station sites in England.</p>
 
 <pre><code>SELECT node.*
 FROM 
@@ -55,14 +55,13 @@ WHERE tag.k='railway' and tag.v='station'
   and node.id = nametag.node_id
 </code></pre>
 
+<p>Inspired by this, I have forked <a href="https://github.com/jnicho02/traingraph">traingraph</a> to look at adding my own flourishes.</p>
+
     </div>
 
     <div class="container-fluid" name="tags">
-        <a href="/tags/code/">
-        <span class="label label-pill label-info pull-left">code</span>
-        </a>
-        <a href="/tags/osm/">
-        <span class="label label-pill label-primary pull-left">osm</span>
+        <a href="/tags/openstreetmap/">
+        <span class="label label-pill label-info pull-left">openstreetmap</span>
         </a>
     </div>
     <div class="container">

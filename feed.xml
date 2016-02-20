@@ -5,10 +5,30 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2015-08-05T01:00:00+01:00</updated>
+  <updated>2016-02-15T00:00:00+00:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Revamped my blog to Boostrap 4 + github pages</title>
+    <link rel="alternate" href="http://blog.url.com/2016/02/15/revamped-blog-to-bootstrap-4/"/>
+    <id>http://blog.url.com/2016/02/15/revamped-blog-to-bootstrap-4/</id>
+    <published>2016-02-15T00:00:00+00:00</published>
+    <updated>2016-02-20T17:23:09+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I revamped my blog over the weekend to use Bootstrap 4. Version 4 isn't a Production release, but hey, what could possibly go wrong?! I needed to learn and there isn't much point learning a soon-to-be-superceded version.&lt;/p&gt;
+
+&lt;p&gt;I've been wanting to combine the power of a CMS with the ease of programming of a Ruby On Rails app. The answer may be a system called Middleman. Blog entries are written in Markdown format then compiled via editable code templates to static html. This means that there is no special hosting required. Any pages can be included as 'erb' (Embedded RuBy) template scripting code to do more complicated stuff.&lt;/p&gt;
+
+&lt;p&gt;It is far from finished but 100 times more attractive than my previous version.&lt;/p&gt;
+
+&lt;p&gt;The major addition in Bootstrap 4 is Cards. A card is a container in itself and could be used to display an instance of an object (eg a blog post, a user record). These can then be put into a screen container to lay them out in columns say, or 'flowing columns' where each card doesn't have a fixed height.&lt;/p&gt;
+
+&lt;p&gt;This handles unknown numbers of things better than table-rows-columns. To me, it is much more like a programmable interface, ie display * from blogposts where tag='ux'&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>read "The Medium is the Massage" by Marshall McLuhan</title>
     <link rel="alternate" href="http://blog.url.com/2015/08/05/read-the-medium-is-the-massage/"/>
@@ -22,18 +42,6 @@
 </content>
   </entry>
   <entry>
-    <title>attended Brighton Ruby Conference 2015</title>
-    <link rel="alternate" href="http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/"/>
-    <id>http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/</id>
-    <published>2015-07-20T01:00:00+01:00</published>
-    <updated>2016-02-14T13:18:45+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">
-</content>
-  </entry>
-  <entry>
     <title>read "The Art of the Start 2.0" by Guy Kawasaki</title>
     <link rel="alternate" href="http://blog.url.com/2015/07/20/read-the-art-of-the-start/"/>
     <id>http://blog.url.com/2015/07/20/read-the-art-of-the-start/</id>
@@ -43,6 +51,18 @@
       <name>Article Author</name>
     </author>
     <content type="html">&lt;p&gt;​​This book was so good that I read it twice.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>attended Brighton Ruby Conference 2015</title>
+    <link rel="alternate" href="http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/"/>
+    <id>http://blog.url.com/2015/07/20/attended-brighton-ruby-conference-2015/</id>
+    <published>2015-07-20T01:00:00+01:00</published>
+    <updated>2016-02-14T13:18:45+00:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">
 </content>
   </entry>
   <entry>
@@ -62,7 +82,7 @@
     <link rel="alternate" href="http://blog.url.com/2015/06/26/athereum-hack-day/"/>
     <id>http://blog.url.com/2015/06/26/athereum-hack-day/</id>
     <published>2015-06-26T01:00:00+01:00</published>
-    <updated>2016-02-14T13:18:45+00:00</updated>
+    <updated>2016-02-20T17:27:29+00:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -231,27 +251,6 @@ eth.getCode(jtoken)&lt;/p&gt;
 var abi = [{"constant":false,"inputs":[],"name":"checkGoalReached","outputs":[{"name":"response","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"deadline","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"beneficiary","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"_beneficiary","type":"address"},{"name":"_fundingGoal","type":"uint256"},{"name":"_duration","type":"uint256"},{"name":"_price","type":"uint256"},{"name":"_reward","type":"address"}],"name":"setup","outputs":[{"name":"response","type":"bytes32"}],"type":"function"},{"constant":true,"inputs":[],"name":"tokenReward","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"fundingGoal","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"amountRaised","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"numFunders","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"funders","outputs":[{"name":"addr","type":"address"},{"name":"amount","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"admin","outputs":[{"name":"","type":"address"}],"type":"function"},{"inputs":[],"type":"constructor"}];
 var instance = eth.contract(abi).at(address)&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>attended Brighton Ruby Group Meetup</title>
-    <link rel="alternate" href="http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/"/>
-    <id>http://blog.url.com/2015/06/04/attended-brighton-ruby-meetup/</id>
-    <published>2015-06-04T01:00:00+01:00</published>
-    <updated>2016-02-14T13:18:45+00:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;​This is a regular monthly &lt;a href="http://www.meetup.com/Brighton-Ruby-Group/"&gt;Meetup&lt;/a&gt; that brings Ruby developers together.&lt;/p&gt;
-
-&lt;p&gt;Andy Croll gave a talk about the joys of Rails ActiveJob. This is essentially a standard interface to different technologies that enable work items to be queued and/or scheduled for later processing. The main benefit being that potentially slow tasks can be offloaded from the main processing thread and run at a more convenient pace.&lt;/p&gt;
-
-&lt;p&gt;The most common usage is for emailing as this is notorious for having slow-running processes.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;UserMailer.welcome(@user).deliver_later
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Use of ActiveJob could lead to different thinking if you broke a larger update into multiple tiny ones, for example updating cached counts. Error handling needs to be considered. The paradigm shift may come from when it is not essential that every single task succeeds.&lt;/p&gt;
 </content>
   </entry>
 </feed>
