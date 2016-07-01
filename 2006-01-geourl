@@ -1,0 +1,9 @@
+<p>Just added a geourl.org physical location meta tag to my blog's template. Gave me a few thoughts:</p>
+
+<ul>
+  <li>Do I really want people to know where I am?</li>
+  <li>Is the positioning too exact to retain privacy?</li>
+  <li>I wonder whether Google are going to use this tag to assist with positioning pages on GoogleMaps?</li>
+  <li>I see also that someone is working on a geourl-neighbours-2-GoogleMaps xslt stylesheet.</li>
+  <li>There are also comments about geourl spam, i.e. sites registering themselves at a location when they've got nothing to do with it. There will have to be some way to confirm the location given.</li>
+</ul>

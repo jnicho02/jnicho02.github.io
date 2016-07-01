@@ -1,0 +1,50 @@
+<p>We have a piece of software that insists on generating a type of csv file containing multiple datasets. I'm currently turning this into XML to make it easier to process (funny that, people seem to have a downer on xml most of the time). I want to parse the csv without knowing what the columns will be, plus they can be speechmark delimitted and maybe contain carriage returns.
+Anyway, it seems easy to start with and then gets more and more involved. Let's face it, life is too short to write a full parser for myself. I did a bit of research and took the opportunity to try it out in groovy. My latest version uses a groovy wrapper <a href="https://github.com/xlson/groovycsv/">https://github.com/xlson/groovycsv/</a> of <a href="http://opencsv.sourceforge.net/">http://opencsv.sourceforge.net/</a></p>
+
+<p>UPDATE: my good friend and ex-colleague @nugsie suggested a MarkupBuilder….</p>
+
+<p>'''groovy</p>
+
+<pre><code>@Grab('com.xlson.groovycsv:groovycsv:0.2')
+import com.xlson.groovycsv.CsvParser
+import groovy.xml.MarkupBuilder
+
+def csv = '''field_one,field_two,field_three
+ay,"be""e",sea
+ay,"bee
+multiline",sea'''
+
+def writer = new StringWriter()
+def xml = new MarkupBuilder(writer)
+def data = new CsvParser().parse(csv)
+xml.records() {
+&amp;nbsp; &amp;nbsp;data.each { line -&amp;gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp;feature() {
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;line.columns.each { columnName, index -&amp;gt;
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;"${columnName}"(line.values[index])
+&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;}
+&amp;nbsp; &amp;nbsp; &amp;nbsp;}
+&amp;nbsp; &amp;nbsp;}
+}
+ 
+writer.toString() '''
+</code></pre>
+
+<p>output from which is:</p>
+
+<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;records&gt;
+   &lt;Feature&gt;
+     &lt;field_one&gt;ay&lt;/field_one&gt;
+     &lt;field_two&gt;be"e&lt;/field_two&gt;
+     &lt;field_three&gt;sea&lt;/field_three&gt;
+   &lt;/Feature&gt;
+   &lt;Feature&gt;
+     &lt;field_one&gt;ay&lt;/field_one&gt;
+     &lt;field_two&gt;bee
+ multiline&lt;/field_two&gt;
+     &lt;field_three&gt;sea&lt;/field_three&gt;
+   &lt;/Feature&gt;
+ &lt;/records&gt;</p>
+
+<p>…nice.</p>
