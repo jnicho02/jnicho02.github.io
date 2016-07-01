@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    watched Organising For Microservices</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2015 x2015_03 x2015_03_watched-organising-for-microservices">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>watched Organising For Microservices</h1>
+      <p>A talk by 500px about microservices http://www.infoq.com/presentations/500px-services jump to 5m</p>
+
+<p>Microservices can be referred to as 'Hipster SOA'</p>
+
+<p>Single responsibility principle</p>
+
+<p>If there is a single, large, codebase then it gets unwieldy. You may be using cloud services, but you are still scaling the whole app rather than the bit that actually needs to scale.</p>
+
+<p>One codebase leads to having only one language/tool/hammer to use. Sometimes a problem can be cured by using a different language but you don't want to mix this in with the big codebase.</p>
+
+<p>If a part of the system fails, you don't want it to affect the others.​ Eliminate Single Points Of Failure. Set up fallback options. A search function can use a cache if the database fails. Semi-live is acceptable.</p>
+
+<p>DevOps practices are essential, otherwise there is an impedence between developers wanting action and sysadmins wanting stability</p>
+
+<p>12 Factor Apps. Thes are good tips for making microservices work</p>
+
+<p>Monitor all the things (they use DataDog)</p>
+
+<p>On call rotation (Pagerduty)</p>
+
+<p>Measure incident response: How it was fixed, how fast, and how it was reported. Mean Time To Detect and Mean Time To Resolve. Acknowledge that failures <em>will</em> happen. Optimise for coping with failures rather than avoiding them.</p>
+
+<p>Gameday Exercises: document failure and what you expect to happen. Do a runthrough. Stop if it starts going wonky and try again later!</p>
+
+<p>Automation: take the complications and distractions away. Enables experimentation.</p>
+
+<p>Use Circuit Breakers. see 'Release It! Design and Deploy Production-Ready Software'</p>
+
+<p>Design for Business Capabilities not technology layers</p>
+
+<p>API Facades: allow a team (like the web team) to manage their own facade which then talks to the back-end service facade. Things can move on without jamming up the process.</p>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/presentations/">
+        <span class="label label-pill label-info pull-left">presentations</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>

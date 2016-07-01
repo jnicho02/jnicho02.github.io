@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    Internationalisation file formats</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2007 x2007_09 x2007_09_internationalisation-file-formats">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>Internationalisation file formats</h1>
+      <p>Was just musing about file formats for i18n and thought the following:</p>
+
+<h2 id="xml-vs-properties">XML vs properties</h2>
+<p>If i18n translations are key-value pairs then XML won’t be the most efficient form. It would probably be better suited to properties files which will be more compact and less costly to parse. This is the approach that Java takes.
+I’ve had problems in the past containing chunks of html within an XML tag as they have to be escaped.</p>
+
+<h2 id="popeye">Popeye</h2>
+<p>In a previous project I used a tool called Popeye http://popeye.sourceforge.net/ to view and edit the translations.
+A benefit of XML is that the charset can be clearly stated, as there can be lots of problems with accented characters.
+One situation where the translations would want to be in XML is when they are used by xslt as an ‘xml include’ to access the file from within the stylesheet. see http://www.topxml.com/xsltStylesheets/xslt_multilingual.asp</p>
+
+<h2 id="excel">Excel</h2>
+<p>You need to take care which editors are used on the files. It is very easy to save it from an editor and mess up the character encoding. Surprisingly to me, a MSoft product appears to be a stable choice…..Excel. We use scripts to convert XML to csv and back again.</p>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/ideas/">
+        <span class="label label-pill label-info pull-left">ideas</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>

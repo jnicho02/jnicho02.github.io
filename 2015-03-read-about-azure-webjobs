@@ -1,7 +1,0 @@
-<p>​Unfortunately, I missed the <a href="http://www.hanselman.com/">Scott Hanselman</a> TIS Talk at work about Azure WebJobs, but his <a href="http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx%E2%80%8B">'Introducing…' article</a> has helped as an introduction.</p>
-
-<p>It looks like a WebJob is a custom task the can either run continuously or be kicked off as a scheduled task. It can take input such as a Blob of data in a storage container, process it and put the output into another container. I don't know yet whether it will perform a callback to tell the trigger that it has finished.</p>
-
-<p>The example in the article says that you have to deploy via a zip file, but this isn't completely true. <a href="http://blog.amitapple.com/post/74215124623/deploy-azure-webjobs/%E2%80%8B">http://blog.amitapple.com/post/74215124623/deploy-azure-webjobs/​</a> shows how it can be a web deploy or git.
-​
-There is a Getting Started tutorial here -&gt; <a href="http://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-webjobs-sdk-get-started/%E2%80%8B">http://azure.microsoft.com/en-us/documentation/articles/websites-dotnet-webjobs-sdk-get-started/​</a></p>

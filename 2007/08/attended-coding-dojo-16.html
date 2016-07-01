@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    CodingDojo 16</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2007 x2007_08 x2007_08_attended-coding-dojo-16">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>CodingDojo 16</h1>
+      <p>​​I went to the Brighton Coding Dojo last night to do some more Ruby programming. We continued with the Klondike (aka Solitaire, aka Patience) CodeKata.</p>
+
+<p>I think that the group benefitted from having an existing codebase to work on and that this is leading to higher levels of programming emerging. The approach has been to model the individual elements of the game which will then be combined to make the game itself, e.g. Card, Deck, Pile(s), etc.</p>
+
+<h2 id="test-driven-development">Test Driven Development</h2>
+<p>TDD was shown to be very useful when a strange event occurred. When trying to print out the contents of the piles there were 20+ of them rather than 7. We then discovered that the starting conditions of the Game had not been tested and contained an error. This could have been avoided and time saved.</p>
+
+<h2 id="responsibility">Responsibility</h2>
+<p>By doing Test Driven Development the classes are tending towards being responsible for their own actions. The tests exercise the class early and avoids the methods drifting off into game-related things, e.g. a Deck of cards is responsible for being 52 cards, 4 suits, etc. but knows nothing about playing Klondike. Conceivably, the Deck could easily be used for a completely different card game without having to be altered.</p>
+
+<h2 id="dependency-injection">Dependency Injection</h2>
+<p>The limits of responsibility start to be challenged when the game starts to be assembled. It is tempting to start adding gameplay methods to domain objects, but remember, each class should only do one thing and that one thing should be obvious from it's name. We have a Game class (that should be renamed to Klondike) and I think that we'll end up with a ComputerPlayer class that does ComputerPlayer.play(game).</p>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/events/">
+        <span class="label label-pill label-info pull-left">events</span>
+        </a>
+        <a href="/tags/brighton-coding-dojo/">
+        <span class="label label-pill label-primary pull-left">brighton-coding-dojo</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>

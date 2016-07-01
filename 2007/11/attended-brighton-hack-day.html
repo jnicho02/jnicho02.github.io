@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    Fun at Brighton Hack Day</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2007 x2007_11 x2007_11_attended-brighton-hack-day">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>Fun at Brighton Hack Day</h1>
+      <p>​​​​Well, as the title says, I had a bit of fun this weekend at the inaugoral Brighton Hack Farm.</p>
+
+<p>The plan was fairly simple: turn up at 10am, spend the day hacking together some code, demo at 5pm. Implementation of the plan was slightly trickier, but ultimately successful.</p>
+
+<p>I went along as part of the Brighton Coding Dojo group. We convened at 10(ish) and decided on a SCRUM-based effort. Thom had brought a box of sensors with him and after a quikc brainstorm I put foward the idea of an Inform text adventure interacting with from the physical world.</p>
+
+<p>The team split into pairs to investigate the different sections of the project and reconvened every 1/2 hour or so. On the whole this worked extremely (no pun intended) well as it meant that we could attack the problem on multiple fronts. The main problem that I had was in finding the right syntax to use in Inform.</p>
+
+<p>Around lunchtime we were joined by Mr Hopper Snr, who after hearing a little about the plan jumped in to story writing for the text adventure. I was focussed on producing a single simplest interaction to prove that the system would work, whereas Simon was interested in the story as a whole (i.e. start with the solution and work backwards). I split this off to be a separate activity and it worked well as it is easy to end up with a really lame text adventure if you focus on getting the mechanism working.</p>
+
+<p>We nearly had an integration problem where an incomplete command would be issued to the game. This was because we didn't force a test.</p>
+
+<p>The eventual demo worked a treat. Thom had adapted the temperature sensor at the last minute to be embedded in the bottom of a cut off Coke can. Hot or cold liquid could be poured into this and be in direct contact with the sensor. This would post a message to a web server which the demo laptop was polling. The Java Robot API was then used to write the appropriate command into the Inform game window at the prompt.</p>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/events/">
+        <span class="label label-pill label-info pull-left">events</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    an easy Hibernate Criteria orderBy</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2006 x2006_05 x2006_05_easy-hibernate-ordering">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>an easy Hibernate Criteria orderBy</h1>
+      <p>I've been doing a bit of Hibernate recently using the Criteria object. This helps you to write an hql query without you needing to do loads of string processing to add the 'wheres', 'ands', etc.</p>
+
+<p>One place where it was a minor pain was in doing an orderBy. Personally I want to be able to say criteria.addOrder("field1 asc, field2 desc") rather than build it up one item at a time. Maybe someone will point out that I've missed a method in the standard library, if so i'll update this post accordingly.</p>
+
+<p>Here's my helper method to allow simple passing of an orderBy string to a Hibernate Criteria:
+'''java</p>
+
+<pre><code>/**
+ * a helper method to add an 'order by' statement to a Hibernate Criteria
+ * pass in an orderBy field in the format 'field asc,field2 desc'.
+ * It will default to ascending so you can pass 'field, field2 desc'
+ * @param criteria
+ * @param orderBy
+ */
+public static void orderBy(Criteria criteria,String orderBy)
+{
+  if (null != orderBy &amp;&amp; !("".equals(orderBy.trim())))
+  {
+    StringTokenizer st = new StringTokenizer(
+        orderBy, ",");
+    while (st.hasMoreTokens())
+    {
+      StringTokenizer st2 = new StringTokenizer(st.nextToken());
+      int tokenCount = 1;
+      String field = null;
+      String direction = "asc";
+      while (st2.hasMoreTokens())
+      {
+        String token = st2.nextToken();
+        switch (tokenCount)
+        {
+          case 1:
+            field = token;
+            break;
+          case 2:
+            direction = token;
+            break;
+          default:
+            break;
+        }
+        tokenCount++;
+      }
+      if (null != field)
+      {
+        if ("asc".equalsIgnoreCase(direction))
+        {
+          criteria.addOrder(Order.asc(field));
+        }
+        else
+        {
+          criteria.addOrder(Order.desc(field));
+        }
+      }
+    }
+  }
+} '''
+</code></pre>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/java/">
+        <span class="label label-pill label-info pull-left">java</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>
