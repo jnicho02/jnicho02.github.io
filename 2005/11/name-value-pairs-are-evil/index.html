@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>
+    XML name/value pairs are evil</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href="/stylesheets/normalize.css" rel="stylesheet" /><link href="/stylesheets/all.css" rel="stylesheet" />
+    <script src="/javascripts/all.js"></script>
+  </head>
+
+  <body class="x2005 x2005_11 x2005_11_name-value-pairs-are-evil x2005_11_name-value-pairs-are-evil_index">
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+      <a class="navbar-brand" href="/"><img src="/images/jez.jpg" width="80em" class="img-circle pull-left" alt="Photo of Jez Nicholson"></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/tags/">Tags</a></li>
+      </ul>
+    </nav>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <h1>XML name/value pairs are evil</h1>
+      <p>When I approach outputting data into XML I always try to adopt an open industry standard. Something that i've noticed is that to enable you to put your own attributes in there is a name/value pair pattern.</p>
+
+<p>I've seen this in my old days in databases, it surfaces as generic tables for reference data in order to 'make the database less complex'. It seems like a good idea at first, but the result is that the developer then has to know the particular code name to use when referencing data instead of the table name enforcing it, and it spoils some of the database server's query plans as it doesn't necessarily use the table joins to use table indexes. So, confusing to the developer and slower to process</p>
+
+<p>for example:
+'''xml</p>
+
+<pre><code>&lt;somedata&gt;
+  &lt;title&gt;My data&lt;/title&gt;
+  &lt;colour&gt;blue&lt;/colour&gt;
+  &lt;variableattributes&gt;
+     &lt;attribute&gt;
+        &lt;name&gt;any attribute name I like&lt;/name&gt;
+        &lt;value&gt;budgie&lt;/value&gt;
+     &lt;/attribute&gt;
+  &lt;variableattributes&gt;
+&lt;/somedata&gt; '''
+</code></pre>
+
+<p>Great, it allowed me to add a new attribute, but at the expense of my xslt including lines like <xsl:value-of select="attribute[@name='any attribute name I like']/value"></xsl:value-of> There is also the chance that someone could spell that attribute name wrongly when creating XML, and also when I give the XML to someone else then there is no definition of my attributes.</p>
+
+<p>My growing opinion is that the XML schema should be made extensible and that if I want to add attributes I should create a schema myself and add it to the XML:</p>
+
+<p>'''xml</p>
+
+<pre><code>&lt;somedata&gt;
+  &lt;title&gt;My data&lt;/title&gt;
+  &lt;colour&gt;blue&lt;/colour&gt;
+  &lt;any_attribute_name_I_like&gt;budgie&lt;/any_attribute_name_I_like&gt;
+&lt;/somedata&gt; '''
+</code></pre>
+
+    </div>
+
+    <div class="container-fluid" name="tags">
+        <a href="/tags/ideas/">
+        <span class="label label-pill label-info pull-left">ideas</span>
+        </a>
+    </div>
+    <div class="container">
+  <span>It's All In The Game blog (c) 2005-16 by Jez Nicholson</span>
+</div>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5854204-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> 
+
+
+  </body>
+</html>
